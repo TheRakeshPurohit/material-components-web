@@ -45,6 +45,16 @@ $width: $height !default;
       }
     }
   }
+
+  // Styles for icon button touch target wrapper.
+  .mdc-touch-target-wrapper-icon-button {
+    // Ensure that styles are only emitted once across all icon buttons.
+    @include base-mixins.emit-once('mdc-touch-target/icon-button-wrapper') {
+      @include feature-targeting.targets($feat-structure) {
+        display: contents;
+      }
+    }
+  }
 }
 
 /// Styles applied to the component's inner touch target element.
